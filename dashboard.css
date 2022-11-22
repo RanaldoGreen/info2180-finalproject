@@ -1,0 +1,164 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "header header"
+                         "buttons records";
+}
+
+body{
+    margin: 0%;
+}
+
+.button{
+    grid-area: buttons;
+}
+  
+.rocords{
+    grid-area: records;
+}
+
+.background{
+    background-color: rgb(244, 241, 241);
+    padding-left: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);  
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+.back{
+    padding-top: 10px;
+    padding-left: 17px;  
+    padding-right: 30px;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(48, 43, 146);
+}
+
+.buttons i{
+    padding: 10px;
+}
+
+.record2{
+    background-color: white;
+}
+
+.filter-by{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 40%;
+}
+
+form, .tables{
+    padding: 20px;
+}
+
+input{
+    width: 100%;
+    border-radius: 2px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: .5px -.5px 1px 1px rgba(0,0,0,0.2);
+    outline-color: #719ECE;
+}
+
+.cell{
+    width: 50%;
+    padding: 10px;
+}
+
+select{
+    width: fixed;
+    border-radius: 2px;
+    border: 1px;
+    padding: 10px;
+    box-shadow: .5px -.5px 1px 1px rgba(0,0,0,0.2);
+    outline-color: #719ECE;
+}
+
+label{
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.table{
+    display: flex;
+}
+
+.save-button{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: rgb(244, 241, 241);
+    padding: 10px;
+}
+
+.save-button #save{
+    background-color: rgb(48, 43, 146);
+    border:none;
+    color: white;
+    width: 8%;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: .5px -.5px 1px 1px rgba(0,0,0,0.2);
+}
+
+.top-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-button a{
+    border:none;
+    color: white;
+    width: fixed;
+    border-radius: 2px;
+    box-shadow: .5px -.5px 1px 1px rgba(0,0,0,0.2);
+    background-color: rgb(48, 43, 146);
+    padding: 12px;
+}
+
+.top-button i{
+    padding-right: 12px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, td, th{    
+    border: 1px solid rgb(244, 241, 241);
+    text-align: left;
+    padding: 10px;
+}
+
+th{
+    background-color: rgb(244, 241, 241);
+}
+
+.db{
+    padding: 10px;
+    padding-top: 0;
+}
+
+.us{
+    padding: 10px;
+}
+
+td th{
+    border: none;
+}
+
+.btn{
+    background-color: white;
+    border: none;
+    outline: none;
+}
+
+.btn:hover{
+    color: rgb(48, 43, 146);
+}
