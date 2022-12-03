@@ -5,6 +5,7 @@
 		<title>Project 2</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	  	<link rel="stylesheet" href="styles.css">
+		<script src="sweetalert.min.js"></script>
 	</head>
 
 	<body>
@@ -12,7 +13,22 @@
 		<main>
             <h1>Login</h1>
             <form method="post" id="controls" action="login.php"> 
-				<div class="input-container">
+				<?php
+					session_start();
+					if(isset($_SESSION['invalid'])){
+				?>
+						<script>
+							swal({
+								icon: "error",
+								title: "Authentication Error!",
+								text: "Email or password is invalid!",
+							});
+						</script>
+				<?php	
+						unset($_SESSION['invalid']);
+					} 
+				?>
+				<div class="input-container">					
 					<i class="fa fa-envelope icon"></i>
 					<input type="email" id="email" name="email" placeholder="Email address" required/>
                 </div>
@@ -26,8 +42,6 @@
 					<button type="submit" name="login" id="login">Login</button>
 				</div>
             </form>
-			<div class="message"></div>
-			</div>
 		</main>
         <footer>
             <p>Copyright &copy; 2020 Dolphin CRM</p>

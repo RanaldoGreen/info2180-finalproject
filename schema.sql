@@ -34,7 +34,7 @@ CREATE TABLE `contacts` (
     `assigned_to` integer(15) NOT NULL default '0',
     `created_by` integer(35) NOT NULL default '0',
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 );
 

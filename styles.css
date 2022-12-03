@@ -41,7 +41,7 @@ input::placeholder{
     color: #062c4b;
 }
 
-#login{
+#login, #confirm, #cancel, #loginpage{
     background-color: rgb(48, 43, 146);
     border:none;
     color: white;
@@ -52,7 +52,7 @@ input::placeholder{
     opacity: .9;
 }
 
-#login:hover{
+#login:hover, #confirm:hover, #cancel:hover, #loginpage:hover{
     opacity: 1;
 }
 

@@ -19,7 +19,7 @@
 					<div><a href="newcontact.php"><i class="fa fa-user-circle-o" aria-hidden="true"></i>New Contact</a></div>
 					<div><a href="users.php"><i class="fa fa-users" aria-hidden="true"></i>Users</a></div>
 					<hr>
-					<div><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></div>
+					<div><a href="sure.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></div>
 				</div>
 			</div>	
 			<div class="background">
@@ -42,4 +42,7 @@
 		</div>
 	</body>
 </html>
-<?php }?>
+<?php }
+else{
+	header('location:filler.php');
+}?>

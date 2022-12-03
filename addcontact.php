@@ -11,16 +11,24 @@ $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 $telephone = filter_var($_POST['telephone'],FILTER_SANITIZE_STRING);
 $company = filter_var($_POST['company'],FILTER_SANITIZE_STRING);
 $type = filter_var($_POST['type'],FILTER_SANITIZE_STRING);
-$assigned_to = filter_var($_POST['assigned-to'],FILTER_SANITIZE_STRING);
-
-session_start();
-$created_by = $_SESSION['id'];
+$assigned_to = filter_var($_POST['assigned'],FILTER_SANITIZE_STRING);
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$conn->beginTransaction();
-$conn->exec("INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at)
-                        VALUES ('$title','$fname','$lname','$email','$telephone','$company','$type','$assigned_to','$created_by',Current_Timestamp)");
-$conn->commit();
+$stmt = $conn->query("SELECT * FROM contacts WHERE email='$email'");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if(count($results)>0){
+    echo 'Error';   
+}
+else if(count($results)==0){
+    session_start();
+    $created_by = $_SESSION['id'];
 
-echo '<script type="text/javascript"> window.open("newcontact.php","_self");</script>';
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $conn->beginTransaction();
+    $conn->exec("INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at)
+                            VALUES ('$title','$fname','$lname','$email','$telephone','$company','$type','$assigned_to','$created_by',Current_Timestamp)");
+    $conn->commit();
+
+    echo 'Saved';
+}
 ?>

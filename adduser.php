@@ -11,10 +11,19 @@ $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $role = filter_var($_POST['role'], FILTER_SANITIZE_STRING);
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-$conn->beginTransaction();
-$conn->exec("INSERT INTO users (firstname, lastname, password, email, role, created_at)
-                        VALUES ('$fname','$lname','$userpassword','$email','$role',Current_Timestamp)");
-$conn->commit();
+$stmt = $conn->query("SELECT * FROM users WHERE email='$email'");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if(count($results)>0){
+    echo "Error";
+}
 
-echo '<script type="text/javascript"> window.open("newuser.php","_self");</script>';
+else if(count($results)==0){
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $conn->beginTransaction();
+    $conn->exec("INSERT INTO users (firstname, lastname, password, email, role, created_at)
+                            VALUES ('$fname','$lname','$userpassword','$email','$role',Current_Timestamp)");
+    $conn->commit();
+
+    echo "Saved";
+}
 ?>

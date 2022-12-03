@@ -17,7 +17,7 @@ echo "<table>
     
 foreach ($results as $row)
 echo"<tr> 
-    <td>" . $row['firstname'] . "</td>
+    <td>" . $row['firstname'] .' '. $row['lastname'] . "</td>
     <td>" . $row['email'] . "</td>
     <td>" . $row['role'] . "</td>
     <td>" . $row['created_at'] . "</td>

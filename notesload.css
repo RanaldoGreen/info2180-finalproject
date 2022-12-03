@@ -1,0 +1,178 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "header header"
+                         "buttons records";
+}
+
+.button{
+    grid-area: buttons;
+}
+  
+.rocords{
+    grid-area: records;
+}
+
+.container2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info1 info2";
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);  
+
+}
+
+.container3{
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);  
+}
+
+.container5{
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    border-width: 1.5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);  
+    background-color: rgb(244, 241, 241);
+}
+
+.container2 p{
+    color:rgb(48, 43, 146);
+}
+
+.info1{
+    grid-area: info1;
+}
+  
+.info2{
+    grid-area: info2;
+}
+
+
+body{
+    margin: 0%;
+    color: rgb(49, 49, 48);
+}
+
+
+.background{
+    padding-left: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);  
+    padding-right: 30px;
+    padding-bottom: 50px;
+    background-color: rgb(255, 253, 253);
+}
+
+.back{
+    padding-top: 10px;
+    padding-left: 17px;  
+    padding-right: 30px;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(48, 43, 146);
+}
+
+.buttons i{
+    padding: 10px;
+}
+
+.save-note{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.save-note #save{
+    background-color: rgb(48, 43, 146);
+    border:none;
+    color: white;
+    width: 8%;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: .5px -.5px 1px 1px rgba(0,0,0,0.2);
+}
+
+.overhead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.t-o-p{
+    display: flex;
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+
+.t-o-p i{
+    font-size: 900%;
+    color: gray;
+    padding-right: 10px;
+}
+
+.background .t-o-p .cname, .container2 p{
+    color: rgb(49, 49, 48);
+}
+
+.btn{
+    padding: 7px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);  
+}
+
+.btn i{
+    padding-right: 8px;
+    padding-right: 8px;
+}
+
+#assign{
+    background-color: rgb(52, 202, 109);
+}
+
+#sales{
+    background-color: gold;
+}
+
+.btn:hover{
+    color: white;
+    transition-duration: 0.2s;
+}
+
+.border{
+    box-sizing: border-box;
+}
+
+h3 i{
+    padding-right: 10px;
+}
+
+#area{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);  
+    padding-bottom: 100px;
+    outline-color: #719ECE;
+    padding-top: 12px;
+    padding-left: 12px;
+}
+
+#area::placeholder{
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+.container4{
+    padding-top: 12px;
+}

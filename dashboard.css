@@ -7,6 +7,7 @@
 
 body{
     margin: 0%;
+    color: rgb(49, 49, 48);
 }
 
 .button{
@@ -36,6 +37,23 @@ a{
     color:rgb(48, 43, 146);
 }
 
+table td:nth-child(5) a{
+    text-decoration: none;
+    color:rgb(48, 43, 146);
+    float: right;
+    padding-right: 20%;
+}
+
+table tr:nth-child(odd){
+    background-color: rgb(244, 241, 241);
+}
+
+#result{
+    box-shadow: .5px .5px 1px 1px rgba(0,0,0,0.2);
+    border: none;
+    border-radius: 2px;
+}
+
 .buttons i{
     padding: 10px;
 }
@@ -51,7 +69,7 @@ a{
     width: 40%;
 }
 
-form, .tables{
+form{
     padding: 20px;
 }
 
@@ -69,8 +87,13 @@ input{
     padding: 10px;
 }
 
-select{
+.cell1{
     width: fixed;
+    padding: 10px;
+}
+
+select{
+    width: 100%;
     border-radius: 2px;
     border: 1px;
     padding: 10px;
@@ -83,6 +106,9 @@ label{
     padding-bottom: 10px;
 }
 
+.tables{
+    padding: 10px;
+}
 .table{
     display: flex;
 }
@@ -131,9 +157,17 @@ table{
 }
 
 table, td, th{    
-    border: 1px solid rgb(244, 241, 241);
     text-align: left;
     padding: 10px;
+}
+
+table td:nth-child(1) a{
+    color: rgb(49, 49, 48);
+    text-decoration: none;
+}
+
+tr{
+    border: 1px solid rgb(244, 241, 241);
 }
 
 th{
@@ -147,6 +181,8 @@ th{
 
 .us{
     padding: 10px;
+    box-shadow: .5px .5px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 2px;
 }
 
 td th{
@@ -157,8 +193,69 @@ td th{
     background-color: white;
     border: none;
     outline: none;
+    display: inline-block;
+    position: relative;
 }
 
-.btn:hover{
-    color: rgb(48, 43, 146);
+.btn:hover, button:focus{ 
+    color:rgb(48, 43, 146);
+}
+
+.btn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:rgb(48, 43, 146);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.btn:hover::after,.btn:focus::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#message{
+    display:none;
+    background: rgb(244, 241, 241);
+    color: #000;
+    position: relative;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+  
+#message p, h3{
+    font-size: 16px;
+    padding-left: 5px;
+}
+  
+.valid {
+    color: green;
+}
+  
+.valid:before {
+    content: "✔ ";
+}
+  
+.invalid {
+    color: red;
+}
+  
+.invalid:before {
+    content: "✖ ";
+}
+
+.note-flex{
+    display: flex;
+
+}
+
+.vl {
+    border-left: 20px blue;
+    height: 100%;
 }
