@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS dolphin;
+GRANT ALL PRIVILEGES ON dolphin.* TO 'admin'@'localhost' IDENTIFIED BY 'password123';
 CREATE DATABASE dolphin;
 USE dolphin;
 
