@@ -7,19 +7,14 @@ CREATE TABLE `users` (
     `id` integer(15) NOT NULL auto_increment,
     `firstname` varchar(35) NOT NULL default '',
     `lastname` varchar(35) NOT NULL default '',
-    `password` varchar(35) NOT NULL default '',
+    `password` varchar(500) NOT NULL default '',
     `email` varchar(35) NOT NULL default '',
     `role` varchar(20) NOT NULL default '',
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY  (`id`)
 );
 
-INSERT INTO `users` VALUES(1,'Yannick','Lyn Fatt','password123','admin@project2.com','Admin',CURRENT_TIMESTAMP),
-                        (2,'Ranado','Green','password123','rg@project2.com','Admin',CURRENT_TIMESTAMP),
-                        (3,'Nicholas','Joiles','password123','nj@project2.com','Admin',CURRENT_TIMESTAMP), 
-                        (4,'Natonya','Stewart','password123','ns@project2.com','Admin',CURRENT_TIMESTAMP), 
-                        (5,'Britney','Hemmings','password123','bh@project2.com','Admin',CURRENT_TIMESTAMP), 
-                        (6,'Jamila','McGowan','password123','jm@project2.com','Admin',CURRENT_TIMESTAMP); 
+INSERT INTO `users` VALUES(1,'Yannick','Lyn Fatt','password123','admin@project2.com','Admin',CURRENT_TIMESTAMP); 
 
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (

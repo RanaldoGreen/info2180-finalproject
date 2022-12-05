@@ -6,7 +6,7 @@ $dbname = 'dolphin';
 
 $fname = filter_var($_POST['fname'], FILTER_SANITIZE_STRING);
 $lname = filter_var($_POST['lname'], FILTER_SANITIZE_STRING);
-$userpassword = $_POST['password'];
+$userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $role = filter_var($_POST['role'], FILTER_SANITIZE_STRING);
 
